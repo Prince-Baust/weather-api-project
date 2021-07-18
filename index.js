@@ -12,6 +12,7 @@ app.get('/', function (req, res){
 app.post('/', function (req, res){
     const cityName = req.body.cityName;
     const apiKey = process.env.API_KEY;
+    console.log(apiKey);
     const url = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=" +apiKey+"&units=metric";
     https.get(url, function (response){
         response.on("data", function (data){
@@ -31,6 +32,6 @@ app.post('/', function (req, res){
 
 
 
-app.listen(3000, function (){
+app.listen(4000, function (){
     console.log('Server started at 3000');
 });
